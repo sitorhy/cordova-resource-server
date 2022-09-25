@@ -1,0 +1,23 @@
+{
+  "name": "cordova-resource-server",
+  "version": "1.0.1",
+  "description": "redirect resource \"www/index.html\" to website which publish in device storage",
+  "cordova": {
+    "id": "cordova-resource-server",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sitorhy/cordova-resource-server.git"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=6.0.0"
+    }
+  ],
+  "author": "sitorhy",
+  "license": "MIT"
+}

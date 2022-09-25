@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-resource-server" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-resource-server</name>
+    <js-module name="ResourceServer" src="www/cordova-resource-server.js">
+        <clobbers target="ResourceServer" />
+    </js-module>
+    <platform name="android">
+        <source-file src="src/android/ResourceServer.java" target-dir="src/com/metacode/cordova" />
+        <source-file src="src/android/ResourceServerRunner.java" target-dir="src/com/metacode/cordova" />
+        <source-file src="src/android/ResourceService.java" target-dir="src/com/metacode/cordova" />
+		<source-file src="src/android/AssetsServer.java" target-dir="src/com/metacode/cordova" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ResourceServer">
+                <param name="android-package" value="com.metacode.cordova.ResourceServerRunner"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+             <service android:name="com.metacode.cordova.ResourceService" android:directBootAware="true" android:enabled="true" />
+        </config-file>
+        <framework src="com.gitee.l0km:nanohttpd-project:2.3.4" />
+        <framework src="org.nanohttpd:nanohttpd-nanolets:2.3.1" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </platform>
+</plugin>
