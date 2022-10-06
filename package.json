@@ -1,6 +1,6 @@
 {
   "name": "cordova-resource-server",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Cordova Plugin to automatically update and off-line running.",
   "cordova": {
     "id": "cordova-resource-server",
