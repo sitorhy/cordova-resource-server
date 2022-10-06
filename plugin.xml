@@ -23,4 +23,22 @@
         <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ResourceServer">
+                <param name="ios-package" value="ResourceServerPlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/ResourceServer.h" />
+        <source-file src="src/ios/ResourceServer.m" />
+        <header-file src="src/ios/ResourceServerPlugin.h" />
+        <source-file src="src/ios/ResourceServerPlugin.m" />
+        <header-file src="src/ios/AssetsServer.h" />
+        <source-file src="src/ios/AssetsServer.m" />
+
+        <framework src="CocoaHTTPServer" type="podspec" spec="~> 2.3" />
+        <framework src="RoutingHTTPServer" type="podspec" spec="~> 1.0.0" />
+    </platform>
 </plugin>
